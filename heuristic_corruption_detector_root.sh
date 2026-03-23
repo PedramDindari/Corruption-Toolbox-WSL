@@ -48,7 +48,7 @@ find /usr /var /snap /opt /etc /srv /home /root -type f | while read -r filepath
 
     # --- GROUP 1: TEXT AND SOURCE CODE ---
     # Python, JS, C, C++, Bash, configs
-    if [[ "$mime" == text/* || "$ext" =~ ^(py|pyi|map|js|ts|c|cpp|h|hpp|inc|cs|sh|txt|json|xml|html|css|ini|yaml|yml|md)$ ]] && (( cur_size > 1 )); then
+    if [[ "$mime" == text/* || "$ext" =~ ^(py|pyi|map|js|ts|c|cpp|h|hpp|inc|cs|sh|bash|bashrc|profile|txt|json|xml|html|css|ini|yaml|yml|md)$ ]] && (( cur_size > 1 )); then
         # Check if libmagic thinks the text file is corrupted binary data
         if [[ "$mime" == "application/octet-stream" || "$mime" == "application/x-data" ]]; then
             echo "$filepath | $STATUS | MIME_MISMATCH | Source file reads as compiled binary data" >> "$REPORT"
