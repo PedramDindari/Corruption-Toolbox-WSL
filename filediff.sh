@@ -3,7 +3,7 @@ BACKUP_DIR="/mnt/wsl/bak"
 CURRENT_DIR="/mnt/wslg/distro"
 
 echo "Scanning... this may take a long time."
-echo "" > ./differrs.log
+echo : > ./differrs.log
 
 # Generate list of files in backup dir, get size, date modified and md5 (if attributes match)
 find "$BACKUP_DIR" -type f -printf "%P|%s|%T@\n" | while read -r line; do

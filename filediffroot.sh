@@ -2,7 +2,7 @@
 BACKUP_DIR="/mnt/wsl/bak"
 
 echo "Scanning... this may take a long time."
-echo "" > ./differrs.log
+echo : > ./differrs.log
 
 # Generate list of files in backup dir, get size, date modified and md5 (if attributes match)
 find "$BACKUP_DIR/usr" "$BACKUP_DIR/var" "$BACKUP_DIR/snap" "$BACKUP_DIR/opt" "$BACKUP_DIR/etc" "$BACKUP_DIR/srv" "$BACKUP_DIR/home" "$BACKUP_DIR/root" -type f -printf "%P|%s|%T@\n" | while read -r line; do
