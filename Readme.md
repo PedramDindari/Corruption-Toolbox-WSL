@@ -45,4 +45,4 @@
 
 ## Prerequisites
 
-1. `ldd` is used in `heuristic_corruption_detector_root.sh` script but is not installed by default in ubuntu for wsl. The respective lines are commented out; uncomment them after installing `ldd`.
+1. `ldd` and `unzip` are used in `heuristic_corruption_detector_root.sh` script but might not be installed by default in ubuntu for wsl. Install them if needed before running the script.

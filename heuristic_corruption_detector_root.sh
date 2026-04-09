@@ -68,9 +68,9 @@ find /usr /var /snap /opt /etc /srv /home /root -type f | while read -r filepath
             echo "$filepath | $STATUS | ELF_HEADER_BROKEN | readelf rejected the binary structure" >> "$REPORT"
         #else
             # Deep check: see if the dynamic linker can resolve its internal tables
-            #if ! ldd "$filepath" >/dev/null 2>&1; then
-            #     echo "$filepath | $STATUS | LNK_BROKEN | ldd could not read dynamic links" >> "$REPORT"
-            #fi
+            if ! ldd "$filepath" >/dev/null 2>&1; then
+                 echo "$filepath | $STATUS | LNK_BROKEN | ldd could not read dynamic links" >> "$REPORT"
+            fi
         fi
     fi
 
